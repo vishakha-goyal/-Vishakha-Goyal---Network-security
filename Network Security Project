@@ -1,0 +1,42 @@
+import hashlib
+text = "Shape Ai"
+
+#Task 1 
+
+result = hashlib.md5(text.encode()).hexdigest()
+print("\n")
+# Convert string to MD5
+print("String to MD5 :       \n", result)
+
+
+#Task 2 
+
+# First algorithm
+# Using SHA384 
+
+result = hashlib.sha384(text.encode()).hexdigest()
+print("\nString to SHA384 :  \n",result)
+
+# Second Algorithm
+# Using SHA512
+
+result = hashlib.sha512(text.encode()).hexdigest()
+print("\nString to SHA512 :   \n",result)
+
+# Third Algorithm
+# Using SHA1
+result = hashlib.sha1(text.encode()).hexdigest()
+print("\nString to SHA1 :     \n",result)
+
+
+# Task 3
+
+# Salting and iteration
+
+salt = hashlib.md5(b"v!sh@KHA").hexdigest()
+
+print("\nSalting And iteration :  \n")
+for i in range(0, 5):
+  project = result + salt
+  
+  print(project)
